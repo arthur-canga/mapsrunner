@@ -30,13 +30,17 @@ incluso caminos que antes eran transitables.
 - Las rutas serán dadas en un archivo de configuración con el siguiente formato:
 
 Lugares
+
 nombre_lugar_1 (solo caracteres alfanuméricos y guión bajo)
+
 ...
 
 Rutas
+
 nombre_ruta -> lugar_partida:lugar_llegada = P:costo; B:costo; C:costo
 
 (un costo de cero indica que no se puede usar ese medio en esa ruta)
+
 ...
 
 Donde las rutas describen el camino y sentido entre un sitio y otro, y los coeficientes
