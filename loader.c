@@ -289,14 +289,14 @@ route **getroutes(char *filename, route **arr_routes, int *m){
         if (!checkroute_alphanumeric(buff)) {
             fprintf(stderr, "ERROR: La ruta %d no cumple con el formato respectivo\n", i);
             fprintf(stderr, "Verifique que los nombres de la ruta sean todos alfanuméricos y la estructura cumpla con"
-                            "la forma {$ROUTE}->{$ORIGIN}:{$DESTINY}=P:{$NUMBER},B:{$NUMBER},C:{$NUMBER}\n");
+                            "la forma {$ROUTE}->{$ORIGIN}:{$DESTINY}=P:{$NUMBER};B:{$NUMBER};C:{$NUMBER}\n");
             fprintf(stderr, "Programa finalizado\n");
             exit(1);
         }
         int flagrep=0;
         place name,og,dest;
         float p,b,c;
-        sscanf(buff,"%[a-zA-Z_0-9]->%[a-zA-Z_0-9]:%[a-zA-Z_0-9]=P:%f,B:%f,C:%f",name,og,dest,&p,&b,&c);
+        sscanf(buff,"%[a-zA-Z_0-9]->%[a-zA-Z_0-9]:%[a-zA-Z_0-9]=P:%f;B:%f;C:%f",name,og,dest,&p,&b,&c);
         if (pos>0){
             for (int j = 0; j < pos; j++) {
                 if (!strcmp(arr_routes[j]->name,name))
@@ -488,7 +488,7 @@ void applyweather(char *weather,route **arr_routes,int n){
             fprintf(stderr,"Programa finalizado\n");
             exit(1);
         }
-        sscanf(buff,"%[a-zA-Z_0-9]=P:%f,B:%f,C:%f",name,&p,&b,&c);
+        sscanf(buff,"%[a-zA-Z_0-9]=P:%f;B:%f;C:%f",name,&p,&b,&c);
         for (int i = 0; i < n; i++) {
             if (!strcmp(name,arr_routes[i]->name)){
                 arr_routes[i]->p*=p;
