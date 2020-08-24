@@ -1,8 +1,9 @@
 //
 // Por Arturo Canga. V-25.696.222
+// y Luis Fernandez. V-28.002.235
 // Para AyPII, creado el 20/7/20
 //
-//
+
 #include <stdio.h>
 #define INF 1000000
 
@@ -26,12 +27,12 @@ typedef struct casilla{
 
 place *getplaces(char *, place *, int *);
 
-route *getroutes(char *, route *, int *);
+route **getroutes(char *, route **, int *);
 
 int placeposition(place, place *, int);
 
-casilla **matrix(place *, int, route *, int);
+casilla ***matrix(place *, int, route **, int);
 
-void applyweather(char *,route *,int);
+void applyweather(char *,route **,int);
 
 void cleaner(place);
