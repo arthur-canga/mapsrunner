@@ -30,17 +30,13 @@ incluso caminos que antes eran transitables.
 - Las rutas serán dadas en un archivo de configuración con el siguiente formato:
 
 Lugares
-
 nombre_lugar_1 (solo caracteres alfanuméricos y guión bajo)
-
 ...
 
 Rutas
-
 nombre_ruta -> lugar_partida:lugar_llegada = P:costo; B:costo; C:costo
 
 (un costo de cero indica que no se puede usar ese medio en esa ruta)
-
 ...
 
 Donde las rutas describen el camino y sentido entre un sitio y otro, y los coeficientes
@@ -51,31 +47,21 @@ RutaA -> Heladeria:Ferreteria = P:2.5; B:0; C:
 
 RutaB -> Heladeria:Ferreteria = P:2.5; B:13; C:
 
-RutaA nos dice que hay un camino desde la heladería hacia la ferretería (En ese
+RutaA nos dice que hay un camino desde la heladería hacia la ferretería (En ese sentido)
+que tarda dos unidades y media de tiempo en transitarse a pie, una en carro y que no es transitable en Bus
+(Esto lo indica el coeficiente cero). La RutaB nos dice que hay otro camino paralelo entre esos dos mismos lugares.
 
-sentido) que tarda dos unidades y media de tiempo en transitarse a pie, una en carro
-
-
-y que no es transitable en Bus (Esto lo indica el coeficiente cero). La RutaB nos dice
-
-que hay otro camino paralelo entre esos dos mismos lugares.
-
-- El clima (opcional) será dado en un archivo de configuración con el siguiente
-    formato:
+- El clima (opcional) será dado en un archivo de configuración con el siguiente formato:
 
 nombre_ruta = P:coeficiente; B:coeficiente; C:coeficiente
 
-Donde se dan los coeficientes que serán multiplicados a los costos a pie, bus y carro
-
-respectivamente de la ruta dada. Por ejemplo:
+Donde se dan los coeficientes que serán multiplicados a los costos a pie, bus y carro respectivamente de la ruta dada.
+Por ejemplo:
 
 RutaB = P:0; B:1; C:1.
 
-Indica que el clima actual afecta a la RutaB de tal forma que el camino a pie se vuelve
-
-intransitable, el costo del bus sigue siendo igual (13*1) y el del carro pasa a ser 13
-
-(10*1.3)
+Indica que el clima actual afecta a la RutaB de tal forma que el camino a pie se vuelve intransitable,
+el costo del bus sigue siendo igual (13 * 1) y el del carro pasa a ser 13 (10 * 1.3)
 
 - Se deberá solicitar el archivo de rutas y opcionalmente el de clima. De igual forma
     se solicitara el punto de partida y fin de la ruta que se desea hallar.
@@ -92,16 +78,12 @@ intransitable, el costo del bus sigue siendo igual (13*1) y el del carro pasa a 
 **Nota: Leer sobre algoritmo de** **_Dijkstra_** **y algoritmo de** **_Yen_**
 
 La entrega del proyecto constará de un informe escrito no mayor a 5 paginas que
-
 contenga el diseño de la solución implementada. También deberá entregar el código
-
 fuente y una serie de resultados que se detallaran con mayor precision el día de la
-
 defensa.
 
-**El plagio de código fuente o bien del contenido del informe implica la anulación**
-
-**del proyecto.**
+**El plagio de código fuente o bien del contenido del informe implica la anulación 
+del proyecto.**
 
 **Fecha de defensa: Lunes 10 / 08 / 2020 7:30 am**
 
